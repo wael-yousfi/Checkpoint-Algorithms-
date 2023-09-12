@@ -1,0 +1,37 @@
+ALGORITHM algorithm_name
+VAR
+// ****the sentence is a variable called *****sentence****
+    sentence:STRING; 
+    SLength, NbWords, NbVowels,i,j,k:INTEGER;
+
+BEGIN
+
+//****************step1:Read the sentence as it was an array*******************// 
+  read (sentence)
+
+//**************** step2:Calculate the length of the sentence, while the "." is not reached incremnt the length *******************//
+WHILE (sentence[i] <> ".") DO
+   SLength:=SLength+1;
+   i=i+1;
+END_WHILE
+   
+//****************  step3: Calculate the numbers of words by calculating the nb of spaces *******************//
+WHILE (j<SLength) DO
+    IF (sentence[j]=" ") THEN
+    NbWords:=NbWords+1
+    j:=j+1;
+    END_IF
+END_WHILE
+
+//****************  step4: Calculate the nb of Vowels which are "a" "e" "u" "i" "o"//SWITH (vowels) *******************//
+
+WHILE (k<SLength)
+IF (sentence[k]="a" OR sentence[k]="e" OR sentence[k]="u" OR sentence[k]="i" OR sentence[k]="o") THEN
+    NbVowels:=NbVowels+1;
+    k:=k+1;
+END_IF
+END_WHILE
+
+   write(SLength, NbWords, NbVowels);
+
+END
